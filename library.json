@@ -1,0 +1,12 @@
+{
+    "name": "QCBOR",
+    "version": "0.0.0",
+    "build": {
+        "flags": [
+            "-I inc",
+            "-I inc/qcbor",
+            "-I src",
+            "-D QCBOR_DISABLE_EXP_AND_MANTISSA"
+        ]
+    }
+}

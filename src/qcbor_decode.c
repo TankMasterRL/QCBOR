@@ -2720,7 +2720,7 @@ Done:
 
 void QCBORDecode_VGetNextConsume(QCBORDecodeContext *pMe, QCBORItem *pDecodedItem)
 {
-   uint8_t    uNextNestLevel;
+   uint_fast8_t    uNextNestLevel = 0;
 
    QCBORDecode_VGetNext(pMe, pDecodedItem);
 
@@ -2923,7 +2923,7 @@ MapSearch(QCBORDecodeContext *pMe,
     that error code is returned.
     */
    const uint8_t uMapNestLevel = DecodeNesting_GetBoundedModeLevel(&(pMe->nesting));
-   uint_fast8_t  uNextNestLevel;
+   uint_fast8_t  uNextNestLevel = 0;
    do {
       /* Remember offset of the item because sometimes it has to be returned */
       const size_t uOffset = UsefulInputBuf_Tell(&(pMe->InBuf));
